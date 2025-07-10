@@ -1,0 +1,36 @@
+---
+# Default configuration for AWS Toolkit
+aws:
+  region: us-east-1
+  # Credentials should be provided via environment variables or AWS CLI
+
+app:
+  log_level: INFO
+  debug: false
+
+# S3 Configuration
+s3:
+  bucket_prefix: "aws-toolkit-"
+  encryption: AES256
+  default_storage_class: STANDARD
+
+# EC2 Configuration  
+ec2:
+  default_instance_type: t2.micro
+  key_pair_name: "aws-toolkit-keypair"
+  security_group: "aws-toolkit-sg"
+
+# Lambda Configuration
+lambda:
+  timeout: 30
+  memory_size: 128
+  runtime: python3.9
+
+# RDS Configuration
+rds:
+  default_instance_class: db.t3.micro
+  backup_retention_period: 7
+  
+# IAM Configuration
+iam:
+  path_prefix: "/aws-toolkit/"
